@@ -1,6 +1,6 @@
 # ractive-render
 
-A simple way to use Ractive.js with (not only) Express.
+A simple way to render Ractive templates on node.js.
 
 ## Installation
 

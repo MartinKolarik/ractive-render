@@ -1,6 +1,6 @@
 {
 	"name": "ractive-render",
-	"description": "Ractive.js templating engine (not only) for Express",
+	"description": "A simple way to render Ractive templates on node.js",
 	"version": "0.1.0",
 	"homepage": "https://github.com/MartinKolarik/ractive-render/",
 	"github": "https://github.com/MartinKolarik/ractive-render/",
