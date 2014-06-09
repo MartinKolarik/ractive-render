@@ -420,5 +420,29 @@ describe('template', function () {
 				});
 			});
 		});
+
+		describe('wrap', function () {
+			it('should render the template', function (done) {
+				app.render('template/template.html', { data: { name: 'Word' }, wrapper: 'template/wrapper.html' }, function (err, html) {
+					if (err) {
+						done(err);
+					}
+
+					expect(html).to.equal('<div class="my-cl"></div><span></span><p>Hello Word!</p>');
+					done();
+				});
+			});
+
+			it('should cache the correct template', function (done) {
+				app.render('template/template.html', { data: { name: 'Word' } }, function (err, html) {
+					if (err) {
+						done(err);
+					}
+
+					expect(html).to.equal('<div class="my-cl"></div><span></span><p>Hello Word!</p>');
+					done();
+				});
+			});
+		});
 	});
 });

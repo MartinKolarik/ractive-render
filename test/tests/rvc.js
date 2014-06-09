@@ -583,5 +583,29 @@ describe('rvc', function () {
 				});
 			});
 		});
+
+		describe('wrap', function () {
+			it('should render the component', function (done) {
+				app.render('rvc/template.html', { data: { name: 'Word' }, wrapper: 'rvc/wrapper.html' }, function (err, html) {
+					if (err) {
+						done(err);
+					}
+
+					expect(html).to.equal('<p>Hello Word!</p><div class="my-cl"></div><span></span>');
+					done();
+				});
+			});
+
+			it('should cache the correct template', function (done) {
+				app.render('rvc/template.html', { data: { name: 'Word' } }, function (err, html) {
+					if (err) {
+						done(err);
+					}
+
+					expect(html).to.equal('<p>Hello Word!</p><div class="my-cl"></div><span></span>');
+					done();
+				});
+			});
+		});
 	});
 });
