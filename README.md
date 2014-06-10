@@ -12,47 +12,60 @@ $ npm install ractive-render
 
 ```js
 var rr = require('ractive-render');
+var template = 'template.html';
+var options = { data: { ... } };
+var callback = function (err, html) { ... };
 
-rr.renderFile('template.html', { data: { ... } }, function (err, html) { ... });
+rr.renderFile(template, options, callback);
 ```
 
 ```.renderFile()``` returns a Promise so you can use ```.then()``` instead of the callback:
 ```js
-rr.renderFile('template.html', { data: { ... } }).then(function (err, html) { ... });
+rr.renderFile(template, options).then(callback);
 ```
 
 If you don't specify ```data``` in ```options```, the whole ```options``` object will be passed to Ractive as ```data``` argument:
 ```js
-rr.renderFile('template.html', { ... }, function (err, html) { ... });
+options = { ... }; // the same as { data: { ... } }
+
+rr.renderFile(template, options, callback);
 ```
 
 ### Partials
 You can define your partial directly:
 ```js
-rr.renderFile('template.html', { data: { ... }, partials: { partial: myPart } }, function (err, html) { ... });
+options = { data: { ... }, partials: { partial: myPart } };
+
+rr.renderFile(template, options, callback);
 ```
 
 Or you can provide a path to the partial:
 ```js
-rr.renderFile('template.html', { data: { ... }, partials: { partial: 'partial!path/to/the/partial' } }, function (err, html) { ... });
+options = { data: { ... }, partials: { partial: 'partial!path/to/the/partial' } };
+
+rr.renderFile(template, options, callback);
 ```
 
-Optionally, you can let ractive-render to take care of the whole process:
+If you have your partials in the same directory as template, you can let ractive-render to take care of the whole process:
 ```js
-rr.config({ autoloadPartials: true });
+rr.config({ autoloadPartials: true }); // you can omit this as it defaults to true
 
-rr.renderFile('template.html', { data: { ... } }, function (err, html) { ... });
+rr.renderFile(template, options, callback);
 ```
 
 ### Components
 Just like with partials, you can define your components directly:
 ```js
-rr.renderFile('template.html', { data: { ... }, components: { component: myComp } }, function (err, html) { ... });
+options = { data: { ... }, components: { component: myComp } };
+
+rr.renderFile(template, options, callback);
 ```
 
 Or you can provide a path. This requires either RVC or load plugin to be installed:
 ```js
-rr.renderFile('template.html', { data: { ... }, components: { component: 'path/to/the/component' } }, function (err, html) { ... });
+options = { data: { ... }, components: { component: 'path/to/the/component' } };
+
+rr.renderFile(template, options, callback);
 ```
 
 ### Ractive RVC
@@ -60,31 +73,35 @@ To use the RVC plugin, you need to install it along with RequireJS:
 ```
 $ npm install rvc requirejs
 ```
+Be careful to install the correct RVC version for your version of Ractive. For Ractive 0.4.0 use RVC 0.1.3. 
 
-Then you have to tell ractive-render to use the plugin:
+Tell ractive-render to use the plugin:
 ```js
 rr.use('rvc').config({ componentsLoader: 'rvc' });
 ```
 
 Now you can render your components like this:
 ```js
-rr.renderFile('component.html', { use: 'rvc', data: { ... } }, function (err, html) { ... });
+options = { use: 'rvc', data: { ... } };
+
+rr.renderFile(template, options, callback);
 ```
 
 Optionally, use can set RVC as default loader and omit the ```use``` parameter.
 ```js
 rr.config({ defaultLoader: 'rvc' });
 
-rr.renderFile('component.html', { data: { ... } }, function (err, html) { ... });
+options = { data: { ... } };
+
+rr.renderFile(template, options, callback);
 ```
 
 ### Ractive load
-To use the Ractive load plugin, you need to install it first:
 ```
 $ npm install ractive-load
 ```
 
-Now you can use it the same way as the RVC plugin.
+You can use it the same way as the RVC plugin.
 
 ### Integration with Express
 
@@ -92,20 +109,21 @@ Now you can use it the same way as the RVC plugin.
 var rr = require('ractive-render');
 app.engine('html', rr.renderFile);
 
-app.render('template.html', { data: { ... } }, function (err, html) { ... });
+app.render(template, options, callback);
 ```
-
 
 ## Performance
-If you set ```cache``` to ```true```, ractive-render will cache the template in memory:
+If you set ```cache``` to ```true```, ractive-render will cache the templates in memory:
 ```js
-rr.renderFile('template.html', { cache: true, data: { ... } }).then(function (err, html) { ... });
+options = { cache: true, data: { ... } };
+
+rr.renderFile(template, options, callback);
 ```
 
-Note that Express sets this automatically for production environments.
+Note that Express does this automatically for production environments. You can clear the cache by calling ```rr.clearCache()```.
 
 ## More details
 Just look at the code.
 
 ## License
-MIT.
+Copyright (c) 2014 Martin Kolárik. Released under the MIT license.
