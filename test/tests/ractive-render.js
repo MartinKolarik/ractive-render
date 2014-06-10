@@ -42,15 +42,15 @@ describe('compile', function () {
 
 describe('config', function () {
 	before (function () {
-		ractiveRender.options.a = 1;
-		ractiveRender.options.b = 2;
+		ractiveRender.settings.a = 1;
+		ractiveRender.settings.b = 2;
 	});
 
 	it('should set "b" to 3 and "c" to 4', function () {
 		ractiveRender.config({ b: 3, c: 4 });
 
-		expect(ractiveRender.options.a).to.equal(1);
-		expect(ractiveRender.options.b).to.equal(3);
-		expect(ractiveRender.options.c).to.equal(4);
+		expect(ractiveRender.settings.a).to.equal(1);
+		expect(ractiveRender.settings.b).to.equal(3);
+		expect(ractiveRender.settings.c).to.equal(4);
 	});
 });

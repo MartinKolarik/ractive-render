@@ -37,8 +37,10 @@ Or you can provide a path to the partial:
 rr.renderFile('template.html', { data: { ... }, partials: { partial: 'partial!path/to/the/partial' } }, function (err, html) { ... });
 ```
 
-Optionally (if you set ```autoloadPartials``` to ```true```), you can let ractive-render to take care of the whole process:
+Optionally, you can let ractive-render to take care of the whole process:
 ```js
+rr.config({ autoloadPartials: true });
+
 rr.renderFile('template.html', { data: { ... } }, function (err, html) { ... });
 ```
 
