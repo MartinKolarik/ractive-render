@@ -150,7 +150,7 @@ describe('template', function () {
 						done();
 					});
 				});
-			})
+			});
 		});
 
 		describe('components', function () {

@@ -37,7 +37,7 @@ describe('compile', function () {
 
 			done();
 		});
-	})
+	});
 });
 
 describe('config', function () {

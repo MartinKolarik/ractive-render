@@ -161,7 +161,7 @@ describe('rvc', function () {
 						done();
 					});
 				});
-			})
+			});
 		});
 
 		describe('components', function () {

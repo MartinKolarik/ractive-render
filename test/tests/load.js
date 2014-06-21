@@ -161,7 +161,7 @@ describe('load', function () {
 						done();
 					});
 				});
-			})
+			});
 		});
 
 		describe('components', function () {
