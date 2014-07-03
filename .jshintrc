@@ -2,7 +2,6 @@
 	"eqnull": true,
 	"jquery": true,
 	"curly": true,
-	"unused": "vars",
 	"noarg": true,
 	"trailing": true,
 	"forin": true,

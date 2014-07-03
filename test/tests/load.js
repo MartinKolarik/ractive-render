@@ -552,12 +552,12 @@ describe('load', function () {
 
 		describe('wrap', function () {
 			it('should render the component', function (done) {
-				app.render('load/template.html', { data: { name: 'Word' }, wrapper: 'load/wrapper.html' }, function (err, html) {
+				app.render('load/template.html', { data: { name: 'Word' }, wrapper: 'load/wrapper.html', el: 'el' }, function (err, html) {
 					if (err) {
 						done(err);
 					}
 
-					expect(html).to.equal('<div class="my-cl"><p>Hello Word!</p></div><span></span>');
+					expect(html).to.equal('<div class="my-cl"><div id="el"><p>Hello Word!</p></div></div><span></span>');
 					done();
 				});
 			});
@@ -568,7 +568,7 @@ describe('load', function () {
 						done(err);
 					}
 
-					expect(html).to.equal('<div class="my-cl"><p>Hello Word!</p></div><span></span>');
+					expect(html).to.equal('<div class="my-cl"><div id="el"><p>Hello Word!</p></div></div><span></span>');
 					done();
 				});
 			});

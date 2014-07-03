@@ -586,12 +586,12 @@ describe('rvc', function () {
 
 		describe('wrap', function () {
 			it('should render the component', function (done) {
-				app.render('rvc/template.html', { data: { name: 'Word' }, wrapper: 'rvc/wrapper.html' }, function (err, html) {
+				app.render('rvc/template.html', { data: { name: 'Word' }, wrapper: 'rvc/wrapper.html', el: 'el' }, function (err, html) {
 					if (err) {
 						done(err);
 					}
 
-					expect(html).to.equal('<p>Hello Word!</p><div class="my-cl"></div><span></span>');
+					expect(html).to.equal('<div id="el"><p>Hello Word!</p></div><div class="my-cl"></div><span></span>');
 					done();
 				});
 			});
@@ -602,7 +602,7 @@ describe('rvc', function () {
 						done(err);
 					}
 
-					expect(html).to.equal('<p>Hello Word!</p><div class="my-cl"></div><span></span>');
+					expect(html).to.equal('<div id="el"><p>Hello Word!</p></div><div class="my-cl"></div><span></span>');
 					done();
 				});
 			});

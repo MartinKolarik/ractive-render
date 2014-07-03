@@ -423,12 +423,12 @@ describe('template', function () {
 
 		describe('wrap', function () {
 			it('should render the template', function (done) {
-				app.render('template/template.html', { data: { name: 'Word' }, wrapper: 'template/wrapper.html' }, function (err, html) {
+				app.render('template/template.html', { data: { name: 'Word' }, wrapper: 'template/wrapper.html', el : 'el' }, function (err, html) {
 					if (err) {
 						done(err);
 					}
 
-					expect(html).to.equal('<div class="my-cl"></div><span></span><p>Hello Word!</p>');
+					expect(html).to.equal('<div class="my-cl"></div><span></span><div id="el"><p>Hello Word!</p></div>');
 					done();
 				});
 			});
@@ -439,7 +439,7 @@ describe('template', function () {
 						done(err);
 					}
 
-					expect(html).to.equal('<div class="my-cl"></div><span></span><p>Hello Word!</p>');
+					expect(html).to.equal('<div class="my-cl"></div><span></span><div id="el"><p>Hello Word!</p></div>');
 					done();
 				});
 			});
