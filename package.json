@@ -1,7 +1,7 @@
 {
 	"name": "ractive-render",
 	"description": "A simple way to render Ractive templates on node.js",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"homepage": "https://github.com/MartinKolarik/ractive-render/",
 	"github": "https://github.com/MartinKolarik/ractive-render/",
 	"main": "index.js",
@@ -13,7 +13,7 @@
 	],
 	"author": {
 		"name": "Martin Kolárik",
-		"email": "martin@kolarik.me",
+		"email": "martin@kolarik.sk",
 		"url": "https://kolarik.me"
 	},
 	"license": "MIT",
