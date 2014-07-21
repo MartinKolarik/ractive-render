@@ -9,6 +9,7 @@ $ npm install ractive-render
 ```
 
 Use v0.3.0 for Ractive v0.5.x.
+
 Use v0.2.0 for Ractive v0.4.0.
 
 ## Usage
@@ -76,7 +77,10 @@ To use the RVC plugin, you need to install it along with RequireJS:
 ```
 $ npm install rvc requirejs
 ```
-Be careful to install the correct RVC version for your version of Ractive. For Ractive 0.4.0 use RVC 0.1.3. For Ractive 0.5.x use RVC 0.2.x.
+Be careful to install the correct RVC version for your version of Ractive:
+
+- for Ractive 0.4.0 use RVC 0.1.3,
+- for Ractive 0.5.x use RVC 0.2.x.
 
 Tell ractive-render to use the plugin:
 ```js
