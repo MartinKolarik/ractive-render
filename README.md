@@ -8,9 +8,9 @@ A simple way to render Ractive templates on node.js.
 $ npm install ractive-render
 ```
 
-Use v0.3.0 for Ractive v0.5.x.
+Use v0.3.x for Ractive v0.5.x.
 
-Use v0.2.0 for Ractive v0.4.0.
+Use v0.2.x for Ractive v0.4.0.
 
 ## Usage
 
