@@ -140,8 +140,8 @@ describe('template', function () {
 					});
 				});
 
-				it('should autoload the partial rendered inside another element', function(done) {
-					app.render('template/template-partial-nested.html', { data: { name: 'Word' } }, function(err, html) {
+				it('should autoload the partial rendered inside another element', function (done) {
+					app.render('template/template-partial-nested.html', { data: { name: 'Word' } }, function (err, html) {
 						if (err) {
 							done(err);
 						}
