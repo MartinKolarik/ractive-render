@@ -31,9 +31,9 @@ describe('compile', function () {
 	it('should compile all templates', function (done) {
 		ractiveRender.clearCache();
 		ractiveRender.compile(app.get('views')).spread(function (load, rvc, template) {
-			expect(load.length).to.equal(8);
-			expect(rvc.length).to.equal(9);
-			expect(template.length).to.equal(8);
+			expect(load.length).to.equal(9);
+			expect(rvc.length).to.equal(10);
+			expect(template.length).to.equal(9);
 
 			done();
 		});

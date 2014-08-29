@@ -158,6 +158,7 @@ describe('load', function () {
 						}
 
 						expect(html).to.equal('<p>Hello Word!</p><p>Hi there!</p>');
+						done();
 					});
 				});
 
