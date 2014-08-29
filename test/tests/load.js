@@ -151,6 +151,16 @@ describe('load', function () {
 					});
 				});
 
+				it('should autoload the partial rendered inside another element', function(done) {
+					app.render('template/template-partial-nested.html', { data: { name: 'Word' } }, function(err, html) {
+						if (err) {
+							done(err);
+						}
+
+						expect(html).to.equal('<p>Hello Word!</p><p>Hi there!</p>');
+					});
+				});
+
 				it('should allow the default partial to be overridden', function (done) {
 					app.render('load/template-partial-2.html', { data: { name: 'Word' } }, function (err, html) {
 						if (err) {

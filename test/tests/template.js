@@ -140,6 +140,16 @@ describe('template', function () {
 					});
 				});
 
+				it('should autoload the partial rendered inside another element', function(done) {
+					app.render('template/template-partial-nested.html', { data: { name: 'Word' } }, function(err, html) {
+						if (err) {
+							done(err);
+						}
+
+						expect(html).to.equal('<p>Hello Word!</p><p>Hi there!</p>');
+					});
+				});
+
 				it('should not fail if partial doesn\'t exist', function (done) {
 					app.render('template/template-no-partial.html', { data: { name: 'Word' } }, function (err, html) {
 						if (err) {
