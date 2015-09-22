@@ -177,7 +177,7 @@ describe('load', function () {
 
 		describe('components', function () {
 			it('should render a component defined as an object', function (done) {
-				app.render('load/template-component.html', { data: { name: 'Word' }, components: { comp: Ractive.extend({ 'template': '{{var}}', data: { var: 123 } }) } }, function (err, html) {
+				app.render('load/template-component.html', { data: { name: 'Word' }, components: { comp: Ractive.extend({ 'template': '{{abc}}', data: { abc: 123 } }) } }, function (err, html) {
 					if (err) {
 						done(err);
 					}
@@ -457,7 +457,7 @@ describe('load', function () {
 		describe('components', function () {
 			it('should render a component defined as an object', function (done) {
 				ractiveRender.clearCache();
-				app.render('load/template-component.html', { data: { name: 'Word' }, components: { comp: Ractive.extend({ 'template': '{{var}}', data: { var: 123 } }) } }, function (err, html) {
+				app.render('load/template-component.html', { data: { name: 'Word' }, components: { comp: Ractive.extend({ 'template': '{{abc}}', data: { abc: 123 } }) } }, function (err, html) {
 					if (err) {
 						done(err);
 					}
