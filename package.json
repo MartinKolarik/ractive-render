@@ -1,7 +1,7 @@
 {
 	"name": "ractive-render",
 	"description": "A simple way to render Ractive templates on node.js",
-	"version": "0.3.1",
+	"version": "0.3.2",
 	"homepage": "https://github.com/MartinKolarik/ractive-render/",
 	"github": "https://github.com/MartinKolarik/ractive-render/",
 	"main": "index.js",
