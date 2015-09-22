@@ -18,17 +18,17 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"bluebird": "2.2.2",
-		"lodash": "2.4.1"
+		"bluebird": "~2.10",
+		"lodash": "~3.10"
 	},
 	"devDependencies": {
-		"chai": "1.9.1",
-		"express": "4.6.1",
-		"mocha": "1.20.1",
-		"ractive": "0.5.5",
-		"ractive-load": "0.3.0",
-		"requirejs": "2.1.14",
-		"rvc": "0.2.2"
+		"chai": "~3.3",
+		"express": "~4.13",
+		"mocha": "~2.3",
+		"ractive": "0.7.3",
+		"ractive-load": "0.5.2",
+		"requirejs": "~2.1",
+		"rvc": "0.3.0"
 	},
 	"scripts": {
 		"test": "mocha"
