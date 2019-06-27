@@ -8,6 +8,8 @@ A simple way to render Ractive templates on node.js.
 $ npm install ractive-render
 ```
 
+Use v0.4.x for Ractive v1.x.x.
+
 Use v0.3.x for Ractive v0.5.x.
 
 Use v0.2.x for Ractive v0.4.0.
@@ -81,6 +83,7 @@ Be careful to install the correct RVC version for your version of Ractive:
 
 - for Ractive 0.4.0 use RVC 0.1.3,
 - for Ractive 0.5.x use RVC 0.2.x.
+- for Ractive 1.x.x use RVC 0.6.x.
 
 Tell ractive-render to use the plugin:
 ```js
